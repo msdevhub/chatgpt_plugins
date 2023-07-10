@@ -1,3 +1,4 @@
+#%%
 from flask import Flask, render_template, request, session, jsonify
 from typing import Dict
 
@@ -5,7 +6,7 @@ from flask import Flask
 import os
 from dotenv import load_dotenv
 from .chat.chat import ChatSession
-
+#%% 
 load_dotenv()
 app = Flask(__name__)
 app.secret_key = os.getenv("CHAT_APP_SECRET_KEY")

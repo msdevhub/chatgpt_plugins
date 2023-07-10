@@ -7,6 +7,9 @@ from .plugins.plugin import PluginInterface
 from .plugins.websearch import WebSearchPlugin
 from .plugins.webscraper import WebScraperPlugin
 from .plugins.pythoninterpreter import PythonInterpreterPlugin
+import os 
+
+OPEN_AI_KEY = os.getenv("OPEN_AI_KEY")
 
 GPT_MODEL = "gpt-3.5-turbo-16k-0613"
 SYSTEM_PROMPT = """
@@ -143,7 +146,7 @@ class ChatSession:
     def _chat_completion_request(self, messages: List[Dict]):
         headers = {
             "Content-Type": "application/json",
-            "Authorization": "Bearer " + openai.api_key,
+            "Authorization": "Bearer " + OPEN_AI_KEY,
         }
         json_data = {"model": GPT_MODEL, "messages": messages, "temperature": 0.7}
         if self.plugins:

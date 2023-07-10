@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "chatgpt-plugins"
+version = "0.1.0"
+description = "powerfull chatgpt with self plugins"
+authors = ["Resley"]
+readme = "README.md"
+packages = [{include = "chatgpt_plugins"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+openai = "^0.27.8"
+flask = "^2.3.2"
+requests = "^2.31.0"
+python-dotenv = "^1.0.0"
+bs4 = "^0.0.1"
+ipykernel = "^6.23.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
