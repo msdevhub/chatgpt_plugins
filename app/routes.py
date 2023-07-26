@@ -2,13 +2,17 @@
 from flask import Flask, render_template, request, session, jsonify
 from typing import Dict
 
-from flask import Flask
+from flask import Flask  
+from flask_cors import CORS
+
 import os
 from dotenv import load_dotenv
 from .chat.chat import ChatSession
 #%% 
 load_dotenv()
 app = Flask(__name__)
+
+CORS(app)
 app.secret_key = os.getenv("CHAT_APP_SECRET_KEY")
 
 

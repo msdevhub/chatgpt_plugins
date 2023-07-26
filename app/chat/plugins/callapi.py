@@ -1,8 +1,8 @@
+import json
 from .plugin import PluginInterface
 from typing import Dict
 import requests
 from bs4 import BeautifulSoup
-
 
 
 class CallAPIPlugin(PluginInterface):
@@ -11,10 +11,9 @@ class CallAPIPlugin(PluginInterface):
         return the name of the plugin (should be snake case)
         """
         return "call_rest_api"
-    
+
     def get_description(self) -> str:
         return "Sends a request to the REST API"
-    
 
     def get_parameters(self) -> Dict:
         """
@@ -39,24 +38,32 @@ class CallAPIPlugin(PluginInterface):
                     "description": "A string representation of the JSON that should be sent as the request body.",
                 },
             },
-            "required": ["method", "url"]
+            "required": ["method", "url"],
         }
         return parameters
-    
-    def execute(self, **kwargs) -> Dict:
+
+    def execute(self, **arguments) -> Dict:
         """
         Execute the plugin and return a JSON response.
         The parameters are passed in the form of kwargs
         """
 
-        # Send a GET request to the URL
-        response = requests.get(kwargs['url'])
+        # arguments = json.loads(arguments)
+        url = "http://127.0.0.1:8000" + arguments["url"]
+        body = arguments.get("body", {})
+        response = None
+        if arguments["method"] == "GET":
+            response = requests.get(url)
+        elif arguments["method"] == "POST":
+            response = requests.post(url, data= body)
+        elif arguments["method"] == "PUT":
+            response = requests.put(url, json=body)
+        elif arguments["method"] == "DELETE":
+            response = requests.delete(url)
+        else:
+            raise ValueError(arguments)
 
-        # Create a BeautifulSoup object to parse the HTML
-        soup = BeautifulSoup(response.text, "html.parser")
-
-        # Extract the text content from the parsed HTML
-        text_content = soup.get_text()
-        return {"content": text_content}
-
-        
+        if response.status_code == 200:
+            return {"content": json.dumps(response.json())}
+        else:
+            return f"Status code: {response.status_code}"
