@@ -162,3 +162,43 @@
 2023-07-26 19:16:26,276 - INFO - Begin get GPT response: do you think the name sweeties is awsome ?
 2023-07-26 19:16:36,002 - INFO - ChatGPT response: [{"index": 0, "finish_reason": "stop", "message": {"role": "assistant", "content": "As an AI assistant, I don't have personal opinions. Whether the name \"sweeties\" is awesome or not is subjective and can vary from person to person."}, "content_filter_results": {"hate": {"filtered": false, "severity": "safe"}, "self_harm": {"filtered": false, "severity": "safe"}, "sexual": {"filtered": false, "severity": "safe"}, "violence": {"filtered": false, "severity": "safe"}}}]
 2023-07-26 19:16:36,003 - INFO - 127.0.0.1 - - [26/Jul/2023 19:16:36] "POST /chat HTTP/1.1" 200 -
+2023-07-27 10:01:10,975 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2023-07-27 10:01:10,975 - INFO - [33mPress CTRL+C to quit[0m
+2023-07-27 10:01:11,025 - INFO -  * Restarting with stat
+2023-07-27 10:01:11,905 - WARNING -  * Debugger is active!
+2023-07-27 10:01:11,913 - INFO -  * Debugger PIN: 269-895-933
+2023-07-27 10:01:31,159 - INFO - 127.0.0.1 - - [27/Jul/2023 10:01:31] "OPTIONS /chat HTTP/1.1" 200 -
+2023-07-27 10:01:31,162 - INFO - Begin get GPT response: hello GPT BOY
+2023-07-27 10:01:33,552 - ERROR - Unable to generate ChatCompletion response
+2023-07-27 10:01:33,552 - ERROR - Exception: 'generator' object is not subscriptable
+2023-07-27 10:01:33,552 - ERROR - 'TypeError' object has no attribute 'get'
+2023-07-27 10:01:33,554 - INFO - 127.0.0.1 - - [27/Jul/2023 10:01:33] "POST /chat HTTP/1.1" 200 -
+2023-07-27 10:02:10,387 - INFO -  * Detected change in '/Users/leeway/Documents/Projects/chatgpt_plugins/app/chat/chat.py', reloading
+2023-07-27 10:02:10,436 - INFO -  * Restarting with stat
+2023-07-27 10:02:11,274 - WARNING -  * Debugger is active!
+2023-07-27 10:02:11,282 - INFO -  * Debugger PIN: 269-895-933
+2023-07-27 10:02:21,412 - INFO - 127.0.0.1 - - [27/Jul/2023 10:02:21] "OPTIONS /chat HTTP/1.1" 200 -
+2023-07-27 10:02:21,414 - INFO - Begin get GPT response: hello are you GPT boy ?
+2023-07-27 10:02:23,562 - INFO - ChatGPT response: [{"index": 0, "finish_reason": "stop", "message": {"role": "assistant", "content": "Hello! I am an AI assistant. I am here to help you with any questions or tasks you have. How can I assist you today?"}, "content_filter_results": {"hate": {"filtered": false, "severity": "safe"}, "self_harm": {"filtered": false, "severity": "safe"}, "sexual": {"filtered": false, "severity": "safe"}, "violence": {"filtered": false, "severity": "safe"}}}]
+2023-07-27 10:02:23,563 - INFO - 127.0.0.1 - - [27/Jul/2023 10:02:23] "POST /chat HTTP/1.1" 200 -
+2023-07-27 10:02:45,608 - INFO -  * Detected change in '/Users/leeway/Documents/Projects/chatgpt_plugins/app/chat/chat.py', reloading
+2023-07-27 10:02:45,685 - INFO -  * Restarting with stat
+2023-07-27 10:02:47,961 - WARNING -  * Debugger is active!
+2023-07-27 10:02:47,967 - INFO -  * Debugger PIN: 269-895-933
+2023-07-27 10:02:59,212 - INFO - 127.0.0.1 - - [27/Jul/2023 10:02:59] "OPTIONS /chat HTTP/1.1" 200 -
+2023-07-27 10:02:59,214 - INFO - Begin get GPT response: hello , what's your name ?
+2023-07-27 10:03:01,213 - INFO - ChatGPT response: [{"index": 0, "finish_reason": "stop", "message": {"role": "assistant", "content": "Hello! My name is GPT BOY. How can I assist you today?"}, "content_filter_results": {"hate": {"filtered": false, "severity": "safe"}, "self_harm": {"filtered": false, "severity": "safe"}, "sexual": {"filtered": false, "severity": "safe"}, "violence": {"filtered": false, "severity": "safe"}}}]
+2023-07-27 10:03:01,214 - INFO - 127.0.0.1 - - [27/Jul/2023 10:03:01] "POST /chat HTTP/1.1" 200 -
+2023-07-27 10:03:50,259 - INFO - 127.0.0.1 - - [27/Jul/2023 10:03:50] "OPTIONS /chat HTTP/1.1" 200 -
+2023-07-27 10:03:50,262 - INFO - Begin get GPT response: nice , GPT boy , would you help me to impove my english skill ?
+2023-07-27 10:03:51,905 - INFO - ChatGPT response: [{"index": 0, "finish_reason": "stop", "message": {"role": "assistant", "content": "Of course! I'd be happy to help you improve your English skills. How can I assist you?"}, "content_filter_results": {"hate": {"filtered": false, "severity": "safe"}, "self_harm": {"filtered": false, "severity": "safe"}, "sexual": {"filtered": false, "severity": "safe"}, "violence": {"filtered": false, "severity": "safe"}}}]
+2023-07-27 10:03:51,906 - INFO - 127.0.0.1 - - [27/Jul/2023 10:03:51] "POST /chat HTTP/1.1" 200 -
+2023-07-27 10:05:07,611 - INFO - 127.0.0.1 - - [27/Jul/2023 10:05:07] "OPTIONS /chat HTTP/1.1" 200 -
+2023-07-27 10:05:07,613 - INFO - Begin get GPT response: i don't know how to do it , but can you just help me find the statement error in we chat process ? 
+2023-07-27 10:05:09,855 - INFO - ChatGPT response: [{"index": 0, "finish_reason": "stop", "message": {"role": "assistant", "content": "Sure, I can help you find the statement error in the WeChat process. Could you please provide me with more details about the issue you are facing?"}, "content_filter_results": {"hate": {"filtered": false, "severity": "safe"}, "self_harm": {"filtered": false, "severity": "safe"}, "sexual": {"filtered": false, "severity": "safe"}, "violence": {"filtered": false, "severity": "safe"}}}]
+2023-07-27 10:05:09,856 - INFO - 127.0.0.1 - - [27/Jul/2023 10:05:09] "POST /chat HTTP/1.1" 200 -
+2023-07-27 10:05:47,062 - INFO - 127.0.0.1 - - [27/Jul/2023 10:05:47] "OPTIONS /chat HTTP/1.1" 200 -
+2023-07-27 10:05:47,065 - INFO - Begin get GPT response: what's WeChat process ?
+2023-07-27 10:05:58,508 - INFO - ChatGPT response: [{"index": 0, "finish_reason": "stop", "message": {"role": "assistant", "content": "WeChat is a popular messaging and social media app developed by Tencent. The process of using WeChat typically involves the following steps:\n\n1. Download and Install: Users need to download the WeChat app from the respective app store (e.g., Google Play Store for Android or App Store for iOS) and install it on their mobile device.\n\n2. Sign Up: After installing the app, users need to sign up for a WeChat account. They can create a new account by providing their mobile number or linking their existing social media accounts like Facebook.\n\n3. Verification: Once the account is created, users may need to verify their mobile number or email address to activate their WeChat account.\n\n4. Profile Setup: Users can set up their profile by adding a profile picture, nickname, and other optional information.\n\n5. Adding Contacts: Users can add contacts to their WeChat account by searching for their friends' WeChat IDs, scanning QR codes, or importing contacts from their phone's address book.\n\n6. Messaging: Users can send text messages, voice messages, images, videos, and other multimedia content to their contacts through WeChat's messaging feature.\n\n7. Moments: WeChat allows users to share updates, photos, and videos on their Moments timeline, similar to a social media feed. Users can also view and interact with their friends' posts.\n\n8. Voice and Video Calls: WeChat supports voice and video calls, allowing users to make free calls to their contacts who are also using WeChat.\n\n9. Official Accounts: WeChat provides a platform for businesses, organizations, and celebrities to create official accounts. Users can follow these accounts to receive updates, promotions, and news.\n\n10. WeChat Pay: WeChat Pay is a digital payment service integrated into the WeChat app. Users can link their bank accounts or add payment methods to make payments, transfer money to friends, and make purchases from online and offline merchants.\n\n11. Mini Programs: WeChat Mini Programs are small applications within the WeChat app that offer various services, such as games, e-commerce, utilities, and more. Users can access these mini programs without installing separate apps.\n\n12. Privacy and Security: WeChat provides privacy settings and security features to protect user data and ensure secure communication.\n\nIt's important to note that the specific process may vary slightly depending on the version of WeChat and the user's location."}, "content_filter_results": {"hate": {"filtered": false, "severity": "safe"}, "self_harm": {"filtered": false, "severity": "safe"}, "sexual": {"filtered": false, "severity": "safe"}, "violence": {"filtered": false, "severity": "safe"}}}]
+2023-07-27 10:05:58,509 - INFO - 127.0.0.1 - - [27/Jul/2023 10:05:58] "POST /chat HTTP/1.1" 200 -

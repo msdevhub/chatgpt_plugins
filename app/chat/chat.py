@@ -11,26 +11,29 @@ from .plugins.websearch import WebSearchPlugin
 from .plugins.webscraper import WebScraperPlugin
 from .plugins.pythoninterpreter import PythonInterpreterPlugin
 import os
-logging.basicConfig(level=logging.INFO,
-                    filename='gpt.log',
-                    filemode='a',
-                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+logging.basicConfig(
+    level=logging.INFO,
+    filename="gpt.log",
+    filemode="a",
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
 
 OPEN_AI_KEY = os.getenv("OPEN_AI_KEY")
 
 GPT_MODEL = "gpt-35-turbo-16k"
 SYSTEM_PROMPT = """
-    You are a helpful AI assistant. You answer the user's queries.
+    You are a helpful AI assistant name is GPT BOY. You answer the user's queries.
     When you are not sure of an answer, you take the help of
     functions provided to you.
     NEVER make up an answer if you don't know, just respond
     with "I don't know" when you don't know.
 """
-
-openai.api_type = "azure"
-openai.api_base = "https://resley-openai.openai.azure.com/"
+# get env from env file
+openai.api_type = os.getenv("OPEN_AI_TYPE")
+openai.api_base = os.getenv("OPEN_AI_ENDPOINT")
 openai.api_version = "2023-07-01-preview"
-openai.api_key = "a67a5c5c489d4da2a558525722e7c36e"
+openai.api_key = OPEN_AI_KEY
 
 
 class Conversation:
@@ -65,8 +68,7 @@ class Conversation:
         #     "url": "/users/[user_id]",
         #     "description": "Removes the employee identified by the given id. Before you call this function, find the employee information and make sure the id is correct. Do NOT call this function if you didn't retrieve user info. Iterate over all pages until you find it or make sure it doesn't exist",
         # },
-        #=====================#
-
+        # =====================#
         {
             "method": "GET",
             "url": "/industry?page=[page_id]",
@@ -113,8 +115,7 @@ class Conversation:
         ]
 
     def add_message(self, role, content):
-        message = {"role": role, "content": content}
-        self.conversation_history.append(message)
+        self.conversation_history.append({"role": role, "content": content})
 
 
 class ChatSession:
@@ -148,7 +149,7 @@ class ChatSession:
         """
         if len(self.conversation.conversation_history) == 1:
             return []
-        return self.conversation.conversation_history[1:]
+        return self.conversation.conversation_history[4:]  # skip message
 
     def _get_functions(self) -> List[Dict]:
         """
@@ -247,6 +248,8 @@ class ChatSession:
             response = openai.ChatCompletion.create(
                 engine="gpt-35-turbo-16k",
                 messages=messages,
+                # stream=True,
+                temperature=0,
                 functions=self._get_functions(),
                 function_call="auto",
             )
